@@ -3,42 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cloth Store — Home</title>
+  <title>Cloth Shop</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="left-controls">
-      <button id="btn-signin" class="btn small">Sign In</button>
-      <button id="btn-login" class="btn small outline">Login</button>
+    <div class="top-left">
+      <button id="signin-btn" class="auth-btn">Sign In</button>
+      <button id="login-btn" class="auth-btn">Login</button>
     </div>
-    <h1 class="site-title">Cloth Store</h1>
-    <div class="spacer"></div>
+    <div class="brand">Cloth Shop</div>
   </header>
 
-  <main class="container">
+  <main>
     <section class="hero">
-      <h2>Welcome — Shop the collection</h2>
-      <p>Hand-picked clothes. Click "Add to Cart" to collect items.</p>
+      <h1>Welcome to Cloth Shop</h1>
+      <p>Quality clothes. Great prices. Fast checkout.</p>
     </section>
 
-    <section id="products" class="products-grid" aria-live="polite">
-      <!-- Products injected by script.js -->
+    <section id="products" class="product-grid" aria-live="polite">
+      <!-- Product cards inserted via JS -->
     </section>
   </main>
 
-  <!-- Floating cart buttons bottom-left and bottom-right -->
-  <button id="cart-btn-left" class="cart-fab left" aria-label="Open cart">
+  <!-- Bottom-left and bottom-right cart buttons -->
+  <button id="cart-btn-left" class="cart-btn cart-left" aria-label="Open cart">
     🛒 <span id="cart-count-left" class="cart-count">0</span>
   </button>
-
-  <button id="cart-btn-right" class="cart-fab right" aria-label="Open cart">
+  <button id="cart-btn-right" class="cart-btn cart-right" aria-label="Open cart">
     🛒 <span id="cart-count-right" class="cart-count">0</span>
   </button>
 
-  <!-- Cart modal/drawer -->
-  <div id="cart-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Shopping cart">
-    <div class="modal-panel">
-      <header class="modal-header">
-        <h3>Your Cart</h3>
-        <button id="close
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="close-cart">&times;</button>
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <div>Total: $<span id="cart-total">0.00</span></div>
+        <button id="checkout-btn" class="primary">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign In / Login Modal (shared) -->
+  <div id="auth-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="close-auth">&times;</button>
+      <h2 id="auth-title">Sign In</h2>
+      <form id="auth-form">
+        <label>
+          Email
+          <input type="email" id="auth-email" required />
+        </label>
+        <label>
+          Password
+          <input type="password" id="auth-password" required />
+        </label>
+        <div class="auth-actions">
+          <button type="submit" class="primary">Submit</button>
+        </div>
+      </form>
+      <p class="note">This is a demo-only form (no backend).</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
