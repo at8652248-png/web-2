@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cloth Store — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="left-controls">
+      <button id="btn-signin" class="btn small">Sign In</button>
+      <button id="btn-login" class="btn small outline">Login</button>
+    </div>
+    <h1 class="site-title">Cloth Store</h1>
+    <div class="spacer"></div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Welcome — Shop the collection</h2>
+      <p>Hand-picked clothes. Click "Add to Cart" to collect items.</p>
+    </section>
+
+    <section id="products" class="products-grid" aria-live="polite">
+      <!-- Products injected by script.js -->
+    </section>
+  </main>
+
+  <!-- Floating cart buttons bottom-left and bottom-right -->
+  <button id="cart-btn-left" class="cart-fab left" aria-label="Open cart">
+    🛒 <span id="cart-count-left" class="cart-count">0</span>
+  </button>
+
+  <button id="cart-btn-right" class="cart-fab right" aria-label="Open cart">
+    🛒 <span id="cart-count-right" class="cart-count">0</span>
+  </button>
+
+  <!-- Cart modal/drawer -->
+  <div id="cart-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <div class="modal-panel">
+      <header class="modal-header">
+        <h3>Your Cart</h3>
+        <button id="close
